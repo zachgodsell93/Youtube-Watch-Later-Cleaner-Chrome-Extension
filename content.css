@@ -1,0 +1,24 @@
+/* YouTube Watch Later Cleaner - Content Styles */
+
+/* Toast notification animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Progress badge on thumbnails */
+.ytcleaner-badge {
+  font-family: 'Roboto', Arial, sans-serif;
+  pointer-events: none;
+}
+
+/* Toast notification */
+.ytcleaner-toast {
+  font-family: 'Roboto', Arial, sans-serif;
+}

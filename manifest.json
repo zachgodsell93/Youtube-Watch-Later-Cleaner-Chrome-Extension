@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Watch Later Cleaner",
+  "version": "1.0.0",
+  "description": "Automatically clean your YouTube Watch Later playlist based on watch progress",
+  "permissions": ["storage", "identity"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "oauth2": {
+    "client_id": "338104500410-8bsl4rvoprdcc5k633fg4999pjeem0lg.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  }
+}

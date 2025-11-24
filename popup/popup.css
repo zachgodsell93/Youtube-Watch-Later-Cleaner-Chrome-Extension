@@ -1,0 +1,274 @@
+/* YouTube Watch Later Cleaner - Popup Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #030303;
+}
+
+.container {
+  background: white;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #065fd4 0%, #0d47a1 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Sections */
+section {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #030303;
+}
+
+/* Settings */
+.setting-item {
+  margin-bottom: 16px;
+}
+
+.setting-item:last-child {
+  margin-bottom: 0;
+}
+
+.setting-item label:not(.toggle-label) {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #030303;
+}
+
+.setting-description {
+  font-size: 11px;
+  color: #606060;
+  margin-top: 4px;
+}
+
+/* Toggle Switch */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  transition: background 0.2s;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-slider {
+  background: #065fd4;
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.toggle-text {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Select Dropdown */
+select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  border-color: #065fd4;
+}
+
+/* Statistics */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.stat-item {
+  background: #f0f0f0;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #065fd4;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #606060;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.last-clean {
+  font-size: 12px;
+  color: #606060;
+  text-align: center;
+}
+
+#lastCleanDate {
+  font-weight: 500;
+  color: #030303;
+}
+
+/* Actions */
+.actions {
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.btn-primary {
+  background: #065fd4;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0d47a1;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.action-description {
+  font-size: 11px;
+  color: #606060;
+  margin-top: 8px;
+}
+
+/* Footer */
+footer {
+  padding: 16px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.version {
+  font-size: 11px;
+  color: #909090;
+  margin-bottom: 8px;
+}
+
+.help-text {
+  font-size: 11px;
+  color: #606060;
+}
+
+.help-text a {
+  color: #065fd4;
+  text-decoration: none;
+}
+
+.help-text a:hover {
+  text-decoration: underline;
+}
+
+/* Loading State */
+.btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

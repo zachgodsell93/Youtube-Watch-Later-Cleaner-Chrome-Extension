@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Watch Later Cleaner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Watch Later Cleaner</h1>
+      <p class="subtitle">Automatically clean your YouTube Watch Later playlist</p>
+    </header>
+
+    <!-- Settings Section -->
+    <section class="settings">
+      <h2>Settings</h2>
+
+      <!-- Enable/Disable Toggle -->
+      <div class="setting-item">
+        <label class="toggle-label">
+          <input type="checkbox" id="enabledToggle" checked>
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Extension Enabled</span>
+        </label>
+      </div>
+
+      <!-- Auto-Remove Toggle -->
+      <div class="setting-item">
+        <label class="toggle-label">
+          <input type="checkbox" id="autoRemoveToggle" checked>
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Auto-Remove Videos</span>
+        </label>
+        <p class="setting-description">Automatically remove videos when threshold is reached</p>
+      </div>
+
+      <!-- Visual Indicators Toggle -->
+      <div class="setting-item">
+        <label class="toggle-label">
+          <input type="checkbox" id="visualIndicatorsToggle" checked>
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Show Progress Badges</span>
+        </label>
+        <p class="setting-description">Display watch percentage on video thumbnails</p>
+      </div>
+
+      <!-- Threshold Selector -->
+      <div class="setting-item">
+        <label for="thresholdSelect">Remove videos watched:</label>
+        <select id="thresholdSelect">
+          <option value="25">25% or more</option>
+          <option value="50">50% or more</option>
+          <option value="75" selected>75% or more</option>
+          <option value="90">90% or more</option>
+          <option value="100">100% (fully watched)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+      <h2>Statistics</h2>
+
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-value" id="videosRemoved">0</div>
+          <div class="stat-label">Videos Removed</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-value" id="timeSaved">0m</div>
+          <div class="stat-label">Time Saved</div>
+        </div>
+      </div>
+
+      <div class="last-clean">
+        Last cleaned: <span id="lastCleanDate">Never</span>
+      </div>
+    </section>
+
+    <!-- Actions Section -->
+    <section class="actions">
+      <button id="cleanNowBtn" class="btn btn-primary">
+        Clean Now
+      </button>
+      <p class="action-description">Manually scan and clean Watch Later playlist</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p class="version">v1.0.0</p>
+      <p class="help-text">
+        Visit your <a href="https://www.youtube.com/playlist?list=WL" target="_blank">Watch Later</a> playlist to see badges
+      </p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
