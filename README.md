@@ -25,6 +25,7 @@ Never let your Watch Later playlist become an overwhelming graveyard of half-wat
 ## ✨ Features
 
 ### Core Functionality
+
 - **🤖 Automatic Removal**: Videos are automatically removed when you've watched them past your chosen threshold
 - **📊 Real-time Tracking**: Monitors your watch progress as you view videos across YouTube
 - **🎨 Visual Indicators**: Color-coded progress badges on Watch Later playlist thumbnails
@@ -33,12 +34,15 @@ Never let your Watch Later playlist become an overwhelming graveyard of half-wat
 - **🔄 Manual Scanning**: On-demand playlist scanning and cleaning
 
 ### Visual Feedback
+
 When viewing your [Watch Later playlist](https://www.youtube.com/playlist?list=WL), each video displays a colored badge:
+
 - 🟢 **Green** (< 25%): Barely started
 - 🟠 **Orange** (25-74%): Partially watched
 - 🔴 **Red** (≥ 75%): Will be removed soon
 
 ### Privacy-First Design
+
 - All data stored locally in your browser
 - No external servers or data collection
 - OAuth 2.0 secure authentication
@@ -166,12 +170,12 @@ To manually scan and clean your entire Watch Later playlist:
 
 All settings are accessible through the extension popup:
 
-| Setting | Options | Description |
-|---------|---------|-------------|
-| **Extension Enabled** | On/Off | Master toggle for all extension functionality |
-| **Auto-Remove Videos** | On/Off | Enable/disable automatic video removal |
-| **Show Progress Badges** | On/Off | Toggle visual indicators on playlist thumbnails |
-| **Removal Threshold** | 25%, 50%, 75%, 90%, 100% | Minimum watch percentage before removal |
+| Setting                  | Options                  | Description                                     |
+| ------------------------ | ------------------------ | ----------------------------------------------- |
+| **Extension Enabled**    | On/Off                   | Master toggle for all extension functionality   |
+| **Auto-Remove Videos**   | On/Off                   | Enable/disable automatic video removal          |
+| **Show Progress Badges** | On/Off                   | Toggle visual indicators on playlist thumbnails |
+| **Removal Threshold**    | 25%, 50%, 75%, 90%, 100% | Minimum watch percentage before removal         |
 
 ### Recommended Thresholds
 
@@ -223,16 +227,17 @@ All settings are accessible through the extension popup:
 
 ### Required Permissions
 
-| Permission | Purpose |
-|------------|---------|
-| `storage` | Store settings, watch progress, and statistics locally |
-| `identity` | OAuth authentication with Google account |
-| `youtube.com` | Access YouTube pages to track watch progress |
-| `googleapis.com` | Call YouTube Data API to manage playlists |
+| Permission       | Purpose                                                |
+| ---------------- | ------------------------------------------------------ |
+| `storage`        | Store settings, watch progress, and statistics locally |
+| `identity`       | OAuth authentication with Google account               |
+| `youtube.com`    | Access YouTube pages to track watch progress           |
+| `googleapis.com` | Call YouTube Data API to manage playlists              |
 
 ### Data Storage
 
 All data is stored **exclusively in your browser's local storage**:
+
 - Watch progress percentages for each video
 - User preference settings
 - Statistics (removal count, time saved)
@@ -244,9 +249,9 @@ All data is stored **exclusively in your browser's local storage**:
 
 YouTube Data API v3 has daily quota limits:
 
-| Operation | Cost | Daily Limit |
-|-----------|------|-------------|
-| Read playlist item | ~1 unit | ~10,000 items |
+| Operation            | Cost     | Daily Limit    |
+| -------------------- | -------- | -------------- |
+| Read playlist item   | ~1 unit  | ~10,000 items  |
 | Delete playlist item | 50 units | ~200 deletions |
 
 **Default quota**: 10,000 units/day
@@ -260,6 +265,7 @@ YouTube Data API v3 has daily quota limits:
 
 **Problem**: Extension appears inactive or unresponsive
 **Solutions**:
+
 1. Open extension popup - check for error messages
 2. Verify YouTube Data API v3 is enabled in Google Cloud Console
 3. Check API quota usage: Cloud Console → APIs & Services → Dashboard
@@ -269,6 +275,7 @@ YouTube Data API v3 has daily quota limits:
 
 **Problem**: Videos remain in playlist despite meeting threshold
 **Solutions**:
+
 1. Confirm "Extension Enabled" and "Auto-Remove Videos" are both ON
 2. Lower the threshold temporarily to test functionality
 3. Visit your Watch Later playlist to check for progress badges
@@ -278,6 +285,7 @@ YouTube Data API v3 has daily quota limits:
 
 **Problem**: No progress badges appear on thumbnails
 **Solutions**:
+
 1. Enable "Show Progress Badges" in settings
 2. Refresh your Watch Later playlist page
 3. Watch a video first - badges only appear after tracking data exists
@@ -287,12 +295,12 @@ YouTube Data API v3 has daily quota limits:
 
 Common YouTube API errors and fixes:
 
-| Error Code | Meaning | Solution |
-|------------|---------|----------|
-| 401 Unauthorized | Invalid/expired OAuth token | Re-authorize extension (reload it) |
-| 403 Forbidden | API not enabled | Enable YouTube Data API v3 |
-| 429 Too Many Requests | Quota limit exceeded | Wait 24 hours for quota reset |
-| 404 Not Found | Video/playlist not found | Video may be private or deleted |
+| Error Code            | Meaning                     | Solution                           |
+| --------------------- | --------------------------- | ---------------------------------- |
+| 401 Unauthorized      | Invalid/expired OAuth token | Re-authorize extension (reload it) |
+| 403 Forbidden         | API not enabled             | Enable YouTube Data API v3         |
+| 429 Too Many Requests | Quota limit exceeded        | Wait 24 hours for quota reset      |
+| 404 Not Found         | Video/playlist not found    | Video may be private or deleted    |
 
 ### Debugging
 
@@ -445,8 +453,6 @@ This extension uses the YouTube Data API v3 and requires compliance with [YouTub
 ---
 
 <div align="center">
-
-**Made with ❤️ for YouTube power users**
 
 [⬆ Back to Top](#youtube-watch-later-cleaner)
 
